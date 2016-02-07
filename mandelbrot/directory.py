@@ -5,12 +5,18 @@ COMMON_HOST = "http://mandelbrot.pault.ag"
 
 
 class Directory:
-    def __init__(self, host, client=requests):
+    def __init__(self, host, client=requests, auth_username=None, auth_password=None):
         self.host = host
         self.client = client
+        self.auth_username = auth_username
+        self.auth_password = auth_password
 
     def _request(self, path):
-        return self.client("{}{}".format(self.host, path))
+        return self.client(
+            "{}{}".format(self.host, path),
+            self.auth_username,
+            self.auth_password,
+        )
 
     def experts(self):
         return self._request("/api/experts/")

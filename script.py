@@ -1,7 +1,9 @@
 from mandelbrot import directory, aiodirectory
 
-# for expert in directory.experts():
-#     print(expert.get('name'))
+
+for expert in directory.experts():
+    print(expert.get('name'))
+
 
 def experts():
     for expert in (yield from aiodirectory.experts()):
