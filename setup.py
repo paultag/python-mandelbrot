@@ -11,7 +11,7 @@ setup(
     version="0.1",
     packages=find_packages(),
     author="Paul Tagliamonte",
-    author_email="paultag@gmail.com"
+    author_email="paultag@gmail.com",
     long_description=long_description,
     description='',
     license="",
