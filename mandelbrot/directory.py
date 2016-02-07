@@ -1,6 +1,8 @@
 from .clients import requests, aiohttp
 import os
 
+COMMON_HOST = "http://mandelbrot.pault.ag"
+
 
 class Directory:
     def __init__(self, host, client=requests):
@@ -17,5 +19,5 @@ class Directory:
         return self._request("/api/expert/{}/".format(id))
 
 
-directory = Directory("http://localhost:8000")
-aiodirectory = Directory("http://localhost:8000", client=aiohttp)
+directory = Directory(COMMON_HOST)
+aiodirectory = Directory(COMMON_HOST, client=aiohttp)
